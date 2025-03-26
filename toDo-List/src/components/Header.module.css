@@ -2,13 +2,30 @@
     background: var(--Gray-700);
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
     padding: 1.25rem 0;
     height: 12.5rem;
+    gap:1rem;
 }
 
 .header img{
-    display: flex;
-    justify-content: center;
-    margin-top: 3rem;
-    height: 3rem;
+    margin-top: 4.5rem;
 }
+
+.header input{
+    width: 39.875rem;
+    height: 3.375rem;
+    border-radius: 8px;
+    outline: none;
+    border: none;
+    margin-top: 3.3125rem;
+    padding: 1rem;
+    color: var(--Gray-100);
+    background: var(--Gray-400);
+}
+
+.header input:focus{
+    border: 2px solid var(--Purple-Dark);
+}
+
