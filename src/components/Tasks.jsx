@@ -1,10 +1,12 @@
 import styles from './Tasks.module.css';
 import clipboard from '../assets/Clipboard.svg';
+import { Trash } from '@phosphor-icons/react';
+
 
 export function Tasks({ tasks }) {
 
     const totalTasks = tasks.length;
-    const completedTasks = 0; 
+    const completedTasks = 0;
 
     return (
         <div>
@@ -22,14 +24,19 @@ export function Tasks({ tasks }) {
                     </p>
                 </div>
             ) : (
-                <ul>
-                    {tasks.map((task, tasks) => (
-                    <li key={tasks}>
-                        <input type="checkbox"/>
-                        {task}
-                    </li>
-                    ))}
-                </ul>
+                <div className={styles.listTasks}>
+                    <ul>
+                        {tasks.map((task, tasks) => (
+                            <li key={tasks}>
+                                <input className={styles.checkBox} type="checkbox" />
+                                {task} 
+                                <button className={styles.Trash}>
+                                    <Trash  size={15} />
+                                </button>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
             )}
         </div>
     )

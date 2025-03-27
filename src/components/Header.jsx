@@ -19,7 +19,7 @@ export function Header({ onAddTask }) {
     }
 
     function handleNewTaskInvalid(event) {
-        event.target.setCustomValidity('Adicione uma tarefa!');
+        event.target.setCustomValidity('Cadastre uma tarefa!');
     }
 
     return (
