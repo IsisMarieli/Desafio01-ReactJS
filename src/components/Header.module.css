@@ -20,7 +20,7 @@
     margin-top: 3.5rem;
 }
 
-.addTask input {
+.addTask textarea {
     width: 39.875rem;
     height: 3.375rem;
     border-radius: 8px;
@@ -30,13 +30,14 @@
     color: var(--Gray-100);
     background: var(--Gray-400);
     transition: all 0.3s ease;
+    resize: none;
 }
 
-.addTask input:focus {
+.addTask textarea:focus {
     border: 2px solid var(--Purple-Dark);
 }
 
-.addTask button {
+.addTask button[type="submit"] {
     border-radius: 8px;
     border: none;
     cursor: pointer;
@@ -50,6 +51,16 @@
     gap: 0.5rem; 
 }
 
+.taskForm button[type="submit"]:not(:disabled)hover {
+    background: var(--green-300);
+}
+
 .addTask button:hover {
     background: var(--Blue);
+}
+
+.taskForm{
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
 }

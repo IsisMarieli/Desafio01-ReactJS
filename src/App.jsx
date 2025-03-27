@@ -6,10 +6,16 @@ import './Global.css';
 
 export function App() {
 
+  const [tasks, setTasks] = useState([]);
+
+  function addNewTask(newTask) {
+    setTasks([...tasks, newTask]);
+  }
+
   return (
-    <>
-      <Header/>
-      <Tasks/>
-    </>
-  )
+    <div>
+      <Header onAddTask={addNewTask} />
+      <Tasks tasks={tasks} />
+    </div>
+  );
 }
