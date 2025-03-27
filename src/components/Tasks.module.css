@@ -1,0 +1,45 @@
+.inforTasks{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4.0625rem;
+    gap: 30.375rem;
+}
+
+.taskCreated{
+    color: var(--Blue);
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.taskCompleted{
+    color: var(--Purple-Dark);
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.inforTasks span{
+    display: inline-block;
+    border-radius: 8px;
+    width: 25px; 
+    height: 19px; 
+    text-align: center; 
+    background: var(--Gray-400);
+    color: var(--Gray-200);
+    line-height: 19px;
+    font-size: 0.75rem;
+}
+
+
+.taskEmpity{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.taskEmpity img{
+    width: 3.5rem;
+}
+
