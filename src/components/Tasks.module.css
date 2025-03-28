@@ -97,6 +97,15 @@ ul li {
     gap: 10px; 
 }
 
+.listTasks li:has(.checkBox:checked) {
+    text-decoration: line-through;
+    color: var(--Gray-300);
+}
+
+.fullCompleted {
+    text-decoration: line-through;
+    color: var(--Gray-300);
+}
 
 .Trash{
     margin-left: auto; 
@@ -118,28 +127,35 @@ ul li {
     cursor: pointer;
     background-color: white;
     transition: 0.2s ease-in-out;
+    position: relative;
 }
 
 .checkBox {
     -webkit-appearance: none;
     appearance: none;
-    width: 17px;
-    height: 17px;
+    width: 1.0625rem;
+    height: 1.0625rem;
     border: 2px solid var(--Blue);
     border-radius: 8px;
     background-color: transparent;
     cursor: pointer;
-    transition: 0.2s ease-in-out;
+    transition: 0.3s ease-in-out;
 }
 
-.checkBox:checked {
+.checkBox:checked  {
     background-color: var(--Purple-Dark);
     border-color: var(--Purple-Dark);
 }
 
-.checkBox:checked::after{
-    display: flex;
-    justify-content: center;
-    color:var(--Gray-100);
+.checkBox:checked::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 9px;
+    background-size: contain;
+    background-repeat:no-repeat;
+    background-image: url('../assets/Vector.svg');
+    transform: translate(-49%, -37%);
 }
-
