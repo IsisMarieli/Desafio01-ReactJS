@@ -3,14 +3,20 @@ import styles from './Tasks.module.css';
 import { Trash } from '@phosphor-icons/react';
 import clipboard from '../assets/Clipboard.svg';
 
-export function Tasks({ tasks }) {
+export function Tasks({ tasks, setTasks }) {
     const [completedTasks, setCompletedTasks] = useState([]);
 
     const handleToggleTask = (task) => {
-        setCompletedTasks(prev => 
-            prev.includes(task) ? prev.filter(t => t !== task) : [...prev, task] 
+        setCompletedTasks((prev) =>
+            prev.includes(task) ? prev.filter((t) => t !== task) : [...prev, task]
         );
     };
+
+    function deleteTask(taskToDelete) {
+        const updatedTasks = tasks.filter((task) => task !== taskToDelete);
+        setTasks(updatedTasks);
+        setCompletedTasks((prev) => prev.filter((t) => t !== taskToDelete));
+    }
 
     const totalTasks = tasks.length;
     const completedCount = completedTasks.length;
@@ -38,17 +44,20 @@ export function Tasks({ tasks }) {
                 <div className={styles.listTasks}>
                     <ul>
                         {tasks.map((task) => (
-                            <li 
-                                key={task} 
+                            <li
+                                key={task}
                                 className={completedTasks.includes(task) ? styles.fullCompleted : ""}
                             >
-                                <input 
-                                    className={styles.checkBox} 
-                                    type="checkbox" 
-                                    onChange={() => handleToggleTask(task)} 
+                                <input
+                                    className={styles.checkBox}
+                                    type="checkbox"
+                                    onChange={() => handleToggleTask(task)}
                                 />
                                 {task}
-                                <button className={styles.Trash}>
+                                <button
+                                    className={styles.Trash}
+                                    onClick={() => deleteTask(task)}
+                                >
                                     <Trash size={15} />
                                 </button>
                             </li>
